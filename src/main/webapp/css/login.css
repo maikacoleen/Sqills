@@ -1,0 +1,105 @@
+html {
+	height: 100%;
+}
+
+body {
+	background: url("/sqills/assets/Beeldbank/GettyImages-827710344.webp")
+		no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+	font-family: Barlow semi Condensed !important;
+	height: 100%;
+}
+
+.wrap {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: inherit;
+}
+
+.square-wrap {
+	width: 390px;
+	height: 100%;
+	border-radius: 10px;
+	background: transparent;
+	margin: auto;
+	padding: 100px 0;
+}
+
+.square {
+	background-color: white;
+	width: 100%;
+	height: 330px;
+	border-radius: 10px;
+}
+
+.login-button {
+	margin-top: 32px;
+	font-size: 20px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	min-width: 160px;
+	height: 42px;
+	border-radius: 21px;
+	background: #d41872;
+	background: -webkit-linear-gradient(left, #a445b2, #d41872, #FF7043);
+	background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+	background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+	background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+	position: relative;
+	z-index: 1;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	outline: none !important;
+	border: none;
+}
+
+.container-button {
+	width: 100%;
+	height: 42px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	display: flex;
+	display: flex;
+}
+
+.input-container {
+	position: relative;
+	width: 100%;
+	height: 109px;
+	padding: 29px 0;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 29px 0;
+}
+
+.input-box {
+	font-size: 22px;
+	width: 100%;
+	height: 50px;
+	outline: none;
+	border: none;
+	padding: 0 10px 0 40px;
+	width: 100%;
+}
+
+.logo {
+	display: block;
+	height: 140px;
+	margin: auto;
+	padding-bottom: 30px;
+}
+
+#usericon {
+	height: 50px;
+}

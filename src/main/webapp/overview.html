@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" name="theme-color">
+	<title>Overview</title>
+	<!-- Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300i&display=swap">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="/sqills/css/bootstrap.min.css">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="/sqills/css/overview.css">
+	<!-- Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/favicon-16x16.png" />
+</head>
+
+<body>
+	<!-- Content -->
+	<div class="container-fluid" style="height: 100%;">
+		<div id="header">
+			<div class="row">
+				<a data-toggle="modal" data-target="#adminmodal" style="width: 180px;">
+					<img src="/sqills/assets/Logomap/Sqills-White-small.png" border="0" alt="logosqills" style="float: left; width: 160px; position: absolute; margin-left: 15px">
+				</a>
+				<h1 class="col" id="clock"></h1>
+			</div>
+		</div>
+		<div class="scrollable">
+			<div id="rooms" class="row flex-row flex-nowrap" style="height: 75vh;"></div>
+		</div>
+		<div id="footer">
+			<div class="row">
+				<div class="col-sm"></div>
+				<div class="col-sm-4" style="font-size: 3vw;">
+					<button class="btn btn-outline-light btn-lg" id="standardRoom">No default room set</button>
+				</div>
+			</div>
+		</div>
+		<!-- Modal admin page -->
+		<div class="modal fade" id="adminmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h6 class="modal-title" id="exampleModalLabel">Administrator page</h6>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div style="color: black;" class="modal-body">
+						<div id="text1">Do you want to go to the administrator login page?</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+						<a href="/sqills/administrator" class="btn" role="button" style="background-color: #fd7e14; color: white">Yes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal default room -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h6 class="modal-title" id="exampleModalLabel">Set default room</h6>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div style="color: black;" class="modal-body">
+						<div id="text1">
+							Choose one of the rooms below to be the default room for this device.
+							<br>
+							When there is no user input on the room page, the default room will be displayed again automatically.
+						</div>
+						<br>
+						<select class="form-control form-control-lg" id="dropdown">
+							<option value="" disabled selected>Choose a default room</option>
+						</select>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="submitbtn" class="btn" style="background-color: #fd7e14; color: white" data-dismiss="modal">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img alt="arrowright" id="arrowright" src="assets/icons/PNG/arrow-right.png"></img>
+	<!-- /Content -->
+	
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script src="/sqills/js/jquery-3.4.0.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script src="/sqills/js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="/sqills/js/bootstrap.min.js"></script>
+	<!-- Custom scripts -->
+	<script src="/sqills/js/overview.js"></script>
+	<script src="/sqills/js/timer.js"></script>
+</body>
+
+</html>

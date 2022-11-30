@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-id="{room.id}" data-name="{room.name}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{room.name}</title>
+	<!-- Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300i&display=swap">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="/sqills/css/bootstrap.min.css">
+	<!-- Material Design Bootstrap -->
+	<link rel="stylesheet" href="/sqills/css/mdb.css">
+	<!-- Full calendar -->
+	<link rel="stylesheet" href="/sqills/fullcalendar/core/main.css">
+	<link rel="stylesheet" href="/sqills/fullcalendar/daygrid/main.css">
+	<link rel="stylesheet" href="/sqills/fullcalendar/timegrid/main.css">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="/sqills/css/room.css">
+	<!-- Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.sqills.com/wp-content/themes/sqills/static/favicons/favicon-16x16.png" />
+</head>
+
+<body>
+	<!-- Content -->
+	<div id="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm">
+					<img alt="logo" src="/sqills/assets/Logomap/Sqills-White-small.png" style="width: 160px;">
+				</div>
+				<div class="col-sm-" style="text-align: center; font-size: 4vw">{room.name}</div>
+				<div class="col-sm" style="text-align: right; font-size: 4vw">
+					<span id="clock"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="status-success" id="statusContainer">
+		<div class="container-fluid">
+			<div class="row" style="text-align: center; font-size: 10vw;">
+				<div id="status-box" class="col" style="margin-top: 20vh;">
+					<p id="status"></p>
+					<p class="information" id="time"></p>
+					<p class="information" id="additionalInformation"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footerDrawer">
+		<div class="open">
+			<img class="mx-auto d-block" alt="logo" id="arrow" src="/sqills/assets/icons/PNG/arrow.png">
+			<p style="text-align: center; font-size: 3vw;">Room schedule</p>
+		</div>
+		<div class="content" style="height: 75vh; overflow: auto;">
+			<!-- Room schedule -->
+			<div id='calendar'></div>
+
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3" style="font-size: 3vw;">
+					<button class="btn btn-outline-light" id="makeReservationButton">Make reservation</button>
+				</div>
+				<div id="clickable" class="col-sm-6" style="pointer-events: none; align: center; font-size: 3vw;">
+				</div>
+				<div class="col-sm-3" style="text-align: right; font-size: 3vw;">
+					<a class="btn btn-outline-light" href="/sqills" id="other">See other rooms</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog form-dark" role="document">
+	        <!--Content-->
+	        <div class="modal-content card card-image" style="background-image: url('/sqills/assets/Beeldbank/GettyImages-136483121.webp');">
+	            <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+	                <!--Header-->
+	                <div class="modal-header text-center pb-4">
+	                    <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>MAKE</strong> <strong class="orange-text font-weight-bold">RESERVATION</strong></h3>
+	                    <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+	                        <span aria-hidden="true">&times;</span>
+	                    </button>
+	                </div>
+	                <!--Body-->
+	                <div class="modal-body">
+	                    <!--Body-->
+	                    <div class="form-row">
+	                    	<div class="col">
+			                    <div class="md-form">
+			                        <input type="email" id="email" class="form-control white-text invalid">
+			                        <label for="email">Email</label>
+			                    </div>
+	                    	</div>
+	                    	<div class="col-2">
+	                    		<div class="md-form">
+	                    			<i class="fas fa-plus fa-2x float-right orange-text" aria-hidden="true" id="addAdditionalAttendee"></i>
+	                    		</div>
+	                    	</div>
+	                    	<div class="col-2">
+	                    		<div class="md-form">
+	                    			<i class="fas fa-minus fa-2x float-right orange-text" aria-hidden="true" id="removeAdditionalAttendee"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<div class="col">
+		                    	<div class="md-form">
+				                    <input type="text" id="name" class="form-control white-text">
+			                    	<label for="name">Name of meeting (optional)</label>
+		                    	</div>
+	                    	</div>
+	                    	<div class="col">
+		                    	<div class="md-form switch">
+									<label>Private <input type="checkbox" id="visible" checked><span class="lever"></span> Public</label>
+		                    	</div>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<div class="col">
+		                    	<div class="md-form">
+				                    <select class="mdb-select colorful-select dropdown-warning" searchable="Search room.." id="room">
+				                    	<option value="" disabled selected>Choose room</option>
+				                    </select>
+		                    	</div>
+	                    	</div>
+	                    	<div class="col">
+		                    	<div class="md-form">
+									<input type="text" id="date" class="form-control datepicker white-text">
+		                    		<label for="date">Choose date</label>
+		                    	</div>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<div class="col">
+	                    		<div class="md-form">
+				                    <input type="text" id="startTime" class="form-control timepicker white-text">
+		                    		<label for="startTime">Choose start time</label>
+	                    		</div>
+	                    	</div>
+	                    	<div class="col">
+	                    		<div class="md-form">
+									<input type="text" id="endTime" class="form-control timepicker white-text">
+		                    		<label for="endTime">Choose end time</label>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    <!--Grid row-->
+	                    <div class="row d-flex align-items-center mb-4">
+	                        <!--Grid column-->
+	                        <div class="text-center mb-3 col-md-12">
+	                            <button type="button" class="btn btn-warning btn-block btn-rounded z-depth-1" id="makeReservation"><strong class="black-text">Make reservation</strong></button>
+	                        </div>
+	                        <!--Grid column-->
+	                    </div>
+	                    <!--Grid row-->
+	                </div>
+	            </div>
+	        </div>
+	        <!--/.Content-->
+	    </div>
+	</div>
+	<!-- Modal -->
+	<!-- /Content -->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script src="/sqills/js/jquery-3.4.0.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script src="/sqills/js/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jtsage-datebox-bootstrap4@5.1.4/jtsage-datebox.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="/sqills/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script src="/sqills/js/mdb.js"></script>
+	<!-- Full calendar -->
+	<script src="/sqills/fullcalendar/core/main.js"></script>
+	<script src="/sqills/fullcalendar/daygrid/main.js"></script>
+	<script src="/sqills/fullcalendar/timegrid/main.js"></script>
+	<!-- Custom scripts -->
+	<script src="/sqills/js/room.js"></script>
+	<script src="/sqills/js/timer.js"></script>
+</body>
+
+</html>
